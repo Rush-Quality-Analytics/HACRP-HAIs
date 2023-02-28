@@ -6,7 +6,7 @@ Python source code and publicly available data for analyzing a history of biased
 ## Directories and files
 All results figures, statistics, and most of the data in this repository can be exactly reproduced by running files within this repository. Below, is a breakdown of the repository's contents. The directories are numbered to indicate the order that users should follow when reproducing files within the repository and results of the associated manuscript.
 
-<details><summary>1\_CleanCurateCompile\_CareCompare\_Data</summary>
+<details><summary>1_CleanCurateCompile_CareCompare_Data</summary>
 Each python file in this directory aggregates years of archived CMS CareCompare data into a single file.
 
 - `HACRP_Facility_Files_CombineYears.py`
@@ -15,7 +15,7 @@ Each python file in this directory aggregates years of archived CMS CareCompare 
 </details>
 
 
-<details><summary>2\_Preprocess\_CareCompare\_data</summary>
+<details><summary>2_Preprocess_CareCompare_data</summary>
 Each python file in this directory preprocesses time-aggregated HAI data to achieve standardized feature names and filtered-feature datasets.
 
 - `Generate_CAUTI_data.py`
@@ -25,7 +25,7 @@ Each python file in this directory preprocesses time-aggregated HAI data to achi
 
 </details>
 
-<details><summary>3\_Merge\_HAC\_with\_HAI</summary>
+<details><summary>3_Merge_HAC_with_HAI</summary>
 Jupyter notebook files in this directory merge data from HAI files with data from HACRP files. These files are also responsible for reproducing HACRP penalty assignments from scratch (a vital validation step). Each year is represented by its own file, due to the complexity of the tasks and varied changes in the HACRP program from one year to the next.
 
 - `2015.ipynb`
@@ -42,32 +42,32 @@ Jupyter notebook files in this directory merge data from HAI files with data fro
 <details><summary>4\_Merge\_HAC-HAI\_with\_HCRIS</summary>
 Jupyter notebook files in this directory take the merged HAC-HAI data and then merge it with data from the CMS Healthcare Cost Report Information System (HCRIS).
 
-- <details><summary>`1_generate_filtered_PUF_df.ipynb`</summary>
+- <details><summary>1_generate_filtered_PUF_df.ipynb</summary>
 
      - This Jupyter notebook file checks, constructs, and/or reproduces payments from the Inpatient Prospective Payment System (IPPS) and penalties from the Hospital Acquired Conditions Reduction Program (HACRP). These data are obtained from HCRIS data sets.
 
-- <details><summary>`2_generate_compiled_df.ipynb`</summary>
+- <details><summary>2_generate_compiled_df.ipynb</summary>
 
      - This Jupyter notebook produces the compiled file of HAI, HACRP, and HCRIS data that will be used in part for optimizing random sampling models, which are in-turn used to calculate the standardized infection score (SIS).
 
 </details>
 
 
-<details><summary>5\_Optimize\_random\_sampling\_models</summary>
+<details><summary>5_Optimize_random_sampling_models</summary>
 The purpose of contents in this directory are to explain the variation in reported numbers of infections for specific types of HAIs (across years and among hospitals) as a consequence of random variation based on hospital volume. The models used here are based on a simple binomial random sampling approach (similar to a model based on coin flips).
 
-- <details><summary>`CAUTI_opt_DataGen.py`</summary>
+- <details><summary>CAUTI_opt_DataGen.py</summary>
 	- A small file (only 8 lines). The file is used to pass CAUTI-based parameters and arguments to functions in the HAI_optimize.py file.
 
-- <details><summary>`CLABSI_opt_DataGen.py`</summary>
+- <details><summary>CLABSI_opt_DataGen.py</summary>
 	- A small file (only 8 lines). The file is used to pass CLABSI-based parameters and arguments to functions in the HAI_optimize.py file.
 
-- <details><summary>`MRSA_opt_DataGen.py`</summary>
+- <details><summary>MRSA_opt_DataGen.py</summary>
 	- A small file (only 8 lines). The file is used to pass MRSA-based parameters and arguments to functions in the HAI_optimize.py file.
 
-- <details><summary>`CDI_opt_DataGen.py`</summary>
+- <details><summary>CDI_opt_DataGen.py</summary>
 	- A small file (only 8 lines). The file is used to pass CDI-based parameters and arguments to functions in the HAI_optimize.py file.	  
-- <details><summary>`HAI_optimize.py`</summary>
+- <details><summary>HAI_optimize.py</summary>
 
 	- This python file optimizes parameters of random sampling models for particular types of HAIs (CAUTI, CLABSI, MRSA, CDI).
 
@@ -104,12 +104,12 @@ This directory contains other directories, each containing data that are either 
 
    - <details><summary>CombinedFiles_HACRP</summary>
    
-   		- <details><summary>`Facility.pkl`</summary>
+   		- <details><summary>Facility.pkl</summary>
    		A pickle file containing cleaned and curated data from the Hospital Acquired Conditions Reduction Program (HACRP) files obtained from the CMS Care Compare hospitals archive.
    
    - <details><summary>CombinedFiles_HAI</summary>
    
-   		- <details><summary>`Facility.pkl`</summary> 
+   		- <details><summary>Facility.pkl</summary> 
    		A pickle file containing cleaned and curated data on Healthcare Associated Infections (HAIs) obtained from the CMS Care Compare hospitals archive.
 
 
