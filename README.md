@@ -4,7 +4,7 @@ Python source code and publicly available data for analyzing a history of biased
 
 
 ## Directories and files
-All results figures, statistics, and most of the data in this repository can be exactly reproduced by running files within this repository. Below, is a breakdown of the repository's contents. The directories are numbered to indicate the order that users should follow when reproducing files within the repository and results of the associated manuscript.
+All results figures, statistics, and most of the data in this repository can be exactly reproduced by running files within this repository. Below, is a breakdown of the repository's contents. The directories are numbered to indicate the order that users should follow when reproducing files within the repository and results of the associated manuscript. **Click on the arrows to reveal files, explanations, and other directories.**
 
 <details><summary>1_CleanCurateCompile_CareCompare_Data</summary>
 Each python file in this directory aggregates years of archived CMS CareCompare data into a single file.
@@ -46,10 +46,14 @@ Jupyter notebook files in this directory take the merged HAC-HAI data and then m
 
      - This Jupyter notebook file checks, constructs, and/or reproduces payments from the Inpatient Prospective Payment System (IPPS) and penalties from the Hospital Acquired Conditions Reduction Program (HACRP). These data are obtained from HCRIS data sets.
 
+	</details>
+
 - <details><summary>2_generate_compiled_df.ipynb</summary>
 
      - This Jupyter notebook produces the compiled file of HAI, HACRP, and HCRIS data that will be used in part for optimizing random sampling models, which are in-turn used to calculate the standardized infection score (SIS).
 
+	</details>
+	
 </details>
 
 
@@ -59,17 +63,27 @@ The purpose of contents in this directory are to explain the variation in report
 - <details><summary>CAUTI_opt_DataGen.py</summary>
 	- A small file (only 8 lines). The file is used to pass CAUTI-based parameters and arguments to functions in the HAI_optimize.py file.
 
+	</details>
+	
 - <details><summary>CLABSI_opt_DataGen.py</summary>
 	- A small file (only 8 lines). The file is used to pass CLABSI-based parameters and arguments to functions in the HAI_optimize.py file.
 
+	</details>
+	
 - <details><summary>MRSA_opt_DataGen.py</summary>
 	- A small file (only 8 lines). The file is used to pass MRSA-based parameters and arguments to functions in the HAI_optimize.py file.
 
+	</details>
+	
 - <details><summary>CDI_opt_DataGen.py</summary>
-	- A small file (only 8 lines). The file is used to pass CDI-based parameters and arguments to functions in the HAI_optimize.py file.	  
-- <details><summary>HAI_optimize.py</summary>
+	- A small file (only 8 lines). The file is used to pass CDI-based parameters and arguments to functions in the HAI_optimize.py file.
 
+	</details>
+	
+- <details><summary>HAI_optimize.py</summary>
 	- This python file optimizes parameters of random sampling models for particular types of HAIs (CAUTI, CLABSI, MRSA, CDI).
+	
+	</details>
 
 </details>
 
@@ -97,111 +111,114 @@ This jupyter notebook in this directory imports a single file containing merged 
 </details>
 
 
+
+
+
+
+
+
+
+
+
 <details><summary>data</summary>
 This directory contains other directories, each containing data that are either imported or produced by the above directories (1 to 7).
 
 - <details><summary>CareCompare_data</summary>
-
-   - <details><summary>CombinedFiles_HACRP</summary>
-   
-   		- <details><summary>Facility.pkl</summary>
+	... stuff ...
+		
+- <details><summary>CombinedFiles_HACRP</summary>
+  
+  - <details><summary>Facility.pkl</summary>
    		A pickle file containing cleaned and curated data from the Hospital Acquired Conditions Reduction Program (HACRP) files obtained from the CMS Care Compare hospitals archive.
+   		
+- <details><summary>CombinedFiles_HAI</summary>
    
-   - <details><summary>CombinedFiles_HAI</summary>
-   
-   		- <details><summary>Facility.pkl</summary> 
+  - <details><summary>Facility.pkl</summary> 
    		A pickle file containing cleaned and curated data on Healthcare Associated Infections (HAIs) obtained from the CMS Care Compare hospitals archive.
 
-
-	
 - <details><summary>Compiled_HCRIS-HACRP-HAI-RAND</summary>
-Files in this directory contain data merged from HCRIS, cost report data from RAND, and files from the CMS Care Compare archive for HAIs and the HACRP. The two files below contain the exact same data, but in different file formats.
+	Files in this directory contain data merged from HCRIS, cost report data from RAND, and files from the CMS Care Compare archive for HAIs and the HACRP. The two files below contain the exact same data, but in different file formats.
 
-	- `Compiled_HCRIS-HACRP-HAI-RAND.csv`
-	- `Compiled_HCRIS-HACRP-HAI-RAND.pkl`
-   
+  - `Compiled_HCRIS-HACRP-HAI-RAND.csv`
+  - `Compiled_HCRIS-HACRP-HAI-RAND.pkl`
 
 - <details><summary>finalized</summary>
-This directory contains files that are the final product of merging data from HCRIS, RAND, and HAI and HACRP data from Care Compare, as well as data on reproduced penalty assignments, penalty assignments based on the standardized infection score (SIS), and penalty assignments based on random expectations. 
+	This directory contains files that are the final product of merging data from HCRIS, RAND, and HAI and HACRP data from Care Compare, as well as data on reproduced penalty assignments, penalty assignments based on the standardized infection score (SIS), and penalty assignments based on random expectations. 
 
-    - `final_2015.pkl`
-    - `final_2016.pkl`
-    - `final_2017.pkl`
-    - `final_2018.pkl`
-    - `final_2019.pkl`
-    - `final_2020.pkl`
-    - `final_2021.pkl`
-    - `final_2022.pkl`
-     
+  - `final_2015.pkl`
+  - `final_2016.pkl`
+  - `final_2017.pkl`
+  - `final_2018.pkl`
+  - `final_2019.pkl`
+  - `final_2020.pkl`
+  - `final_2021.pkl`
+  - `final_2022.pkl`
+
 
 - <details><summary>HCRIS_data</summary>
-This directory contains a file engineered from freely available SAS-based HCRIS cost report files. The file is generated by the `1_generate_filtered_PUF_df.ipynb` file. The resulting data file is then used by the `2_generate_compiled_df.ipynb` file.
+	This directory contains a file engineered from freely available SAS-based HCRIS cost report files. The file is generated by the `1_generate_filtered_PUF_df.ipynb` file. The resulting data file is then used by the `2_generate_compiled_df.ipynb` file.
 
-     - `FilteredEngineeredPUF_p5.pkl`
+  - `FilteredEngineeredPUF_p5.pkl`
+
 
 - <details><summary>merged_HAC_HAI</summary>
-Files in this directory are serialized python data files. These files contain HACRP data merged with HAI data, as well as reproduced penalty assignments and their associated data.
+	Files in this directory are serialized python data files. These files contain HACRP data merged with HAI data, as well as reproduced penalty assignments and their associated data.
 
-     - `HAI_HAC_2015.pkl`
-     - `HAI_HAC_2016.pkl`
-     - `HAI_HAC_2017.pkl`
-     - `HAI_HAC_2018.pkl`
-     - `HAI_HAC_2019.pkl`
-     - `HAI_HAC_2020.pkl`
-     - `HAI_HAC_2021.pkl`
-     - `HAI_HAC_2022.pkl`
-     - `P1_HAI_HAC_2017_holdout.pkl`
-     - `P1_HAI_HAC_2017.pkl`
+  - `HAI_HAC_2015.pkl`
+  - `HAI_HAC_2016.pkl`
+  - `HAI_HAC_2017.pkl`
+  - `HAI_HAC_2018.pkl`
+  - `HAI_HAC_2019.pkl`
+  - `HAI_HAC_2020.pkl`
+  - `HAI_HAC_2021.pkl`
+  - `HAI_HAC_2022.pkl`
+  - `P1_HAI_HAC_2017_holdout.pkl`
+  - `P1_HAI_HAC_2017.pkl`
 
 - <details><summary>optimized_by_HAI_file_date</summary>
-This directory contains four other directories, each containing the outputs of random sample based modeling, including optimized model parameters.
+	This directory contains four other directories, each containing the outputs of random sample based modeling, including optimized model parameters.
 
-     - CAUTI
-     - CLABSI
-     - MRSA
-     - CDI
-
+  - CAUTI
+  - CLABSI
+  - MRSA
+  - CDI
+	
 - <details><summary>preprocessed_HAI_data</summary>
 	The directory holds curated and processed data from the CMS CareCompare Hospital archive. The contents are:
-     - `CAUTI_Data.pkl`
-     - `CLABSI_Data.pkl`
-     - `MRSA_Data.pkl`
-     - `CDI_Data.pkl`
+	
+  - `CAUTI_Data.pkl`
+  - `CLABSI_Data.pkl`
+  - `MRSA_Data.pkl`
+  - `CDI_Data.pkl`
 
-     
 - <details><summary>Rand_CostReport</summary>
-This directory contains a file obtained from the RAND hospital cost report tool, which offers a single freely available file. This file is used in the current project to verify derived IPPS payment values.
+	This directory contains a file obtained from the RAND hospital cost report tool, which offers a single freely available file. This file is used in the current project to verify derived IPPS payment values.
 
-     - `rand_hcris_free_2022_11_01.csv`
+  - `rand_hcris_free_2022_11_01.csv`
 
 - <details><summary>states_codes</summary>
-This directory contains a single small file. The file contains state codes used in the formation of 6-digit CMS facility numbers. These are used in verifying and engineering HCRIS data.
+	This directory contains a single small file. The file contains state codes used in the formation of 6-digit CMS facility numbers. These are used in verifying and engineering HCRIS data.
 
-     - `HCRIS_STATE_CODES.csv`
+  - `HCRIS_STATE_CODES.csv`
 
 </details>
-
-
 
 <details><summary>figures</summary>
-The files in this directory comprise the graphical results of the associated manuscript and its appendix.
+	The files in this directory comprise the graphical results of the associated manuscript and its appendix.
 
+  - <details><summary>`Hists_HAC.png`</summary>
+	A figure showing that the distribution of random-based HAC scores is highly similar to the distribution of actual HAC scores.
 
-- <details><summary>`Hists_HAC.png`</summary>
-A figure showing that the distribution of random-based HAC scores is highly similar to the distribution of actual HAC scores.
+  - <details><summary>`Obs_v_Pred.png`</summary>
+	A figure showing that random expectations based on volume explain the majority of variation in reported numbers of infections across hospitals.
 
-- <details><summary>`Obs_v_Pred.png`</summary>
-A figure showing that random expectations based on volume explain the majority of variation in reported numbers of infections across hospitals.
+  - <details><summary>`change_in_rank.png`</summary>
+	A figure showing the result of accounting for random expectations based on volume when calculating rates of HAIs. Specifically, hospital rankings in HAC scores drastically change when using the SIS to account for random expectations.
 
-- <details><summary>`change_in_rank.png`</summary>
-A figure showing the result of accounting for random expectations based on volume when calculating rates of HAIs. Specifically, hospital rankings in HAC scores drastically change when using the SIS to account for random expectations.
-
-- <details><summary>`expected_penalties.png`</summary>
-A figure showing the accumulation of biased HACRP penalties and inappropriate CMS savings across program years (2015 to 2022).
+  - <details><summary>`expected_penalties.png`</summary>
+	A figure showing the accumulation of biased HACRP penalties and inappropriate CMS savings across program years (2015 to 2022).
 
 </details>
-
-
 
 
 ## Reproducing data files and results of the associated research
@@ -244,64 +261,63 @@ Versions are those used in the current project. Similar versions will likely wor
 
 <details><summary>4. Run programs following the numerical file structure.</summary>
 
- - <details><summary>1_CleanCurateCompile_CareCompare_Data</summary>
-Run these files to generate aggregated HAI and HACRP data. It doesn't matter which is run first.
+- <details><summary>1_CleanCurateCompile_CareCompare_Data</summary>
+	Run these files to generate aggregated HAI and HACRP data. It doesn't matter which is run first.
 
-	- `HACRP_Facility_Files_CombineYears.py`
-	- `HAI_Facility_Files_CombineYears.py`
-
+  - `HACRP_Facility_Files_CombineYears.py`
+  - `HAI_Facility_Files_CombineYears.py`
 
 - <details><summary>2_Preprocess_CareCompare_data</summary>
-Run these files to preprocesses aggregated HAI data. Each file will take a few hours, so it's best to run each in a different terminal window. It doesn't matter which is run first.
+	Run these files to preprocesses aggregated HAI data. Each file will take a few hours, so it's best to run each in a different terminal window. It doesn't matter which is run first.
 
-	- `Generate_CAUTI_data.py`
-	- `Generate_CLABSI_data.py`
-	- `Generate_MRSA_data.py`
-	- `Generate_CDI_data.py`
+  - `Generate_CAUTI_data.py`
+  - `Generate_CLABSI_data.py`
+  - `Generate_MRSA_data.py`
+  - `Generate_CDI_data.py`
 
 - <details><summary>3_Merge_HAC_with_HAI</summary>
-Run each of these Jupyter notebook files. With the exception of part 1 and part 2 for 2017, it doesn't matter which notebook you run first. For 2017, run part 1 first.
+	Run each of these Jupyter notebook files. With the exception of part 1 and part 2 for 2017, it doesn't matter which notebook you run first. For 2017, run part 1 first.
 
-	- `2015.ipynb`
-	- `2016.ipynb`
-	- `2017-Part1.ipynb`
-	- `2017-Part2.ipynb`
-	- `2018.ipynb`
-	- `2019.ipynb`
-	- `2020.ipynb`
-	- `2021.ipynb`
-	- `2022.ipynb`   
+  - `2015.ipynb`
+  - `2016.ipynb`
+  - `2017-Part1.ipynb`
+  - `2017-Part2.ipynb`
+  - `2018.ipynb`
+  - `2019.ipynb`
+  - `2020.ipynb`
+  - `2021.ipynb`
+  - `2022.ipynb`   
 
 - <details><summary>4_Merge_HAC-HAI_with_HCRIS</summary>
-Run these Jupyter notebook files to merge HAC/HAI data with HCRIS data. Run `1_generate_filtered_PUF_df.ipynb` first.
+	Run these Jupyter notebook files to merge HAC/HAI data with HCRIS data. Run `1_generate_filtered_PUF_df.ipynb` first.
 
-	- `1_generate_filtered_PUF_df.ipynb`
-	- `2_generate_compiled_df.ipynb`</summary>
+  - `1_generate_filtered_PUF_df.ipynb`
+  - `2_generate_compiled_df.ipynb`
 	
 - <details><summary>5_Optimize_random_sampling_models</summary>
-Run each of the `...opt_DataGen.py` files to generate optimized random expectations for each type of HAI, for each hospital in each year. Each file will take seveal hours to run, so it is recommended to run each of the 4 files in its own terminal window.
+	Run each of the `...opt_DataGen.py` files to generate optimized random expectations for each type of HAI, for each hospital in each year. Each file will take seveal hours to run, so it is recommended to run each of the 4 files in its own terminal window.
 
-	- `CAUTI_opt_DataGen.py`
-	- `CLABSI_opt_DataGen.py`
-	- `MRSA_opt_DataGen.py`
-	- `CDI_opt_DataGen.py`		
-	- `HAI_optimize.py`
+  - `CAUTI_opt_DataGen.py`
+  - `CLABSI_opt_DataGen.py`
+  - `MRSA_opt_DataGen.py`
+  - `CDI_opt_DataGen.py`		
+  - `HAI_optimize.py`
 
 - <details><summary>6_Generate_SIS_results</summary>
-The jupyter notebooks in this directory are similar to those in the Merge_HAC_with_HAI directory. However, rather than attempt to reproduce actual HACRP penalty assignments using numbers of observed infections, each Jupyter notebook produces HACRP penalty assignments based on the numbers of infections expected at random based on volume.
+	The jupyter notebooks in this directory are similar to those in the Merge_HAC_with_HAI directory. However, rather than attempt to reproduce actual HACRP penalty assignments using numbers of observed infections, each Jupyter notebook produces HACRP penalty assignments based on the numbers of infections expected at random based on volume.
 
-	- `SIS_2015.ipynb`
-	- `SIS_2016.ipynb`
-	- `SIS_2017.ipynb`
-	- `SIS_2018.ipynb`
-	- `SIS_2019.ipynb`
-	- `SIS_2020.ipynb`
-	- `SIS_2021.ipynb`
-	- `SIS_2022.ipynb`
+  - `SIS_2015.ipynb`
+  - `SIS_2016.ipynb`
+  - `SIS_2017.ipynb`
+  - `SIS_2018.ipynb`
+  - `SIS_2019.ipynb`
+  - `SIS_2020.ipynb`
+  - `SIS_2021.ipynb`
+  - `SIS_2022.ipynb`
 
 - <details><summary>7_Generate_Final_results</summary>
-Run this jupyter notebook to reproduce all tables and figures contained in the associated manuscript.
+	Run this jupyter notebook to reproduce all tables and figures contained in the associated manuscript.
 
-	- `generate_final_results.ipynb`
+  - `generate_final_results.ipynb`
 
 </details>
